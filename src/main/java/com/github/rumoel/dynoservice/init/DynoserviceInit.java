@@ -126,7 +126,7 @@ public class DynoserviceInit extends Thread {
 					StringEntity stringEntity = new StringEntity(jsonData.toJSONString());
 					httpPost.setEntity(stringEntity);
 					String responseBody = httpclient.execute(httpPost, responseHandler);
-					String msg = (System.currentTimeMillis() / 1000) + name + ":" + responseBody;
+					String msg = (System.currentTimeMillis() / 1000) + ":" + name + ":" + responseBody;
 					logger.info(msg);
 				} catch (IOException e) {
 					e.printStackTrace();

@@ -6,14 +6,9 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.util.ArrayList;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 public class IpAddrUtils {
 	private ArrayList<String> ipv4Resolvers = new ArrayList<>();
 	private ArrayList<String> ipv6Resolvers = new ArrayList<>();
-
-	Logger logger = LoggerFactory.getLogger(getClass());
 
 	public IpAddrUtils() {
 		ipv4Resolvers.add("http://checkip.amazonaws.com");
@@ -36,7 +31,6 @@ public class IpAddrUtils {
 				if (answ == null) {
 					continue;
 				}
-				logger.info(answ);
 				return answ;
 			} catch (Exception e) {
 				e.printStackTrace();
